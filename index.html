@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -23,8 +22,8 @@
                         <button class="normal botoes-operacao" onclick="insert('/')">
                             /
                         </button>
-                        <button class="normal botoes-operacao" onclick="insert('X')">
-                            x
+                        <button class="normal botoes-operacao" onclick="insert('*')">
+                            X
                         </button>
                     </div>
                     <div class="botoes-row">
@@ -77,7 +76,7 @@
                     <button class="normal column-double botoes-operacao" onclick="insert('+')">
                         +
                     </button>
-                    <button class="normal column-double botoes-operacao">
+                    <button class="normal column-double botoes-operacao" onclick="calcular()">
                         =
                     </button>
                 </div>
@@ -85,6 +84,6 @@
         </section>
     </main>
 </body>
-
+<script src="script.js"></script>
 
 </html>
