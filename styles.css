@@ -22,7 +22,6 @@ h1 {
 
 /* actual stuff */
 
-
 body {
     display: flex;
     align-items: center;
@@ -52,19 +51,18 @@ body {
 }
 
 .botoes-row *, .botoes-column * {
-    
     margin: 3px;
     background-color: #3b3b3b;
     border: none;
     color: white;
 }
 
-.botoes-row-column .botoes-row:first-child button, .botoes-column button{
+.botoes-operacao{
     background-image: radial-gradient(farthest-side at 50% 45%,rgba(238, 130, 238, 0.05),#3b3b3b);
     color: #EE82EE;
 }
 
-.botoes-column button:hover, .botoes-row-column .botoes-row:first-child button:hover{
+.botoes-column button:hover, .botoes-row button:hover, .botoes-operacao:hover{
     background: #2d292e;
 }
 
@@ -80,9 +78,12 @@ body {
 }
 
 .visor {
+    color: #e3dee3;
+    background-color: #1f111f;
+    height: 50px;
     border-radius: 10px;
     padding: 10px;
-    margin-bottom: 30px;
+    margin: 0 0 30px 0;
     font-size: 50px;
     text-align: right;
 }
@@ -100,5 +101,3 @@ body {
 .row-double {
     width: 206px;
 }
-
-.container .button-row:last-child button:last-of-type {}
