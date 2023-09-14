@@ -1,23 +1,18 @@
 
 let visor = document.getElementById('visor');
 let resposta = false;
-var icon = document.getElementById('icon');
-
-
-
+let icon = document.getElementById('icon');
 //Funções
-
-
 
 //light and darkmode
 
-icon.onclick = function(){
+icon.onclick = function () {
     document.body.classList.toggle("light-theme");
-    if (document.body.classList.contains("light-theme")){
-        icon.src ="SunIcon.png"
+    if (document.body.classList.contains("light-theme")) {
+        icon.src = "SunIcon.png"
     }
-    else{
-        icon.src ="MoonIcon.png"
+    else {
+        icon.src = "MoonIcon.png"
     }
 }
 
@@ -25,7 +20,10 @@ icon.onclick = function(){
 function insert(numero) {
 
     let textVisor = visor.innerHTML;
-    if (textVisor === "0" || resposta) {
+    const Operador = ['+', '-', '*', '/'].includes(numero);
+
+
+    if (textVisor === "0" || resposta && !Operador) {
         visor.innerHTML = "";
         visor.innerHTML += numero;
         resposta = false;
@@ -43,9 +41,9 @@ function apagaVisor() {
 
 function calcular() {
     if (visor) {
-        let resultado = eval(visor.innerHTML);
-        resultado = parseFloat(resultado.toFixed(10));
+        let resultado = eval(visor.innerHTML.replace(/,/g, ''));
+        resultado = parseFloat(resultado.toFixed(5));
         resposta = true;
-        document.getElementById('visor').innerHTML = resultado;
+        document.getElementById('visor').innerHTML = resultado.toLocaleString("en-US");
     }
 }
