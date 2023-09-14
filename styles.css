@@ -20,19 +20,60 @@ h1 {
     text-align: center;
 }
 
-/* actual stuff */
 
+/* actual stuff */
+:root{
+
+    --bg-color: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 100%);
+    --btns-color: #3b3b3b;
+    --calc-color: #212121;
+    --visor-bg-color: #1f111f;
+    --visor-color: #e3dee3;
+    --btns-hover-color: #2d292e;
+    --btns-glow: radial-gradient(farthest-side at 50% 45%,rgba(238, 130, 238, 0.05),#3b3b3b);
+    --btns-text-color: white;
+   
+
+    /* light mode */
+    .light-theme{
+        --bg-color: linear-gradient(90deg, rgba(28,28,28,1) 0%, rgba(24,24,24,1) 100%);
+        --btns-color: #f2f2f2;
+        --calc-color: #dbdbdb;
+        --visor-bg-color: #f2f2f2;
+        --visor-color: black;
+        --btns-hover-color: #e4e4e4;
+        --btns-glow: none;
+        --btns-text-color: black;
+        --titulo-color: white;
+    }
+   
+}
 body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #636263;
+    background: var(--bg-color);
 }
+#icon{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+.titulocalc{
+    color: var(--titulo-color);
+}
+
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
 
 .container {
     width: 100%;
     max-width: 424px;
-    background-color: #212121;
+    background-color: var(--calc-color);
     padding: 30px;
     border-radius: 10px;
     height: 650px;
@@ -45,8 +86,8 @@ body {
     overflow: hidden;
     width: 90%;
     max-width: 90%;
-    color: #e3dee3;
-    background-color: #1f111f;
+    color: var(--visor-color);
+    background-color: var(--visor-bg-color);
     height: 50px;
     border-radius: 10px;
     padding: 10px;
@@ -60,7 +101,7 @@ body {
     width: fit-content;
     margin: 0 auto;
     display: flex;
-    background-color: #202020;
+    background-color: var(--calc-color);
 }
 
 .botoes * {
@@ -69,18 +110,18 @@ body {
 
 .botoes-row *, .botoes-column * {
     margin: 3px;
-    background-color: #3b3b3b;
+    background-color: var(--btns-color);
     border: none;
-    color: white;
+    color: var(--btns-text-color);
 }
 
 .botoes-operacao{
-    background-image: radial-gradient(farthest-side at 50% 45%,rgba(238, 130, 238, 0.05),#3b3b3b);
+    background-image: var(--btns-glow);
     color: #EE82EE;
 }
 
 .botoes-column button:hover, .botoes-row button:hover, .botoes-operacao:hover{
-    background: #2d292e;
+    background: var(--btns-hover-color);
 }
 
 .botoes-row {
